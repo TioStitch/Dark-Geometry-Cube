@@ -7,8 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
-    private ImageIcon background = new Main().getBackDraw();
-    private CharController player = new Main().getPlayer();
+    private final ImageIcon background = new Main().getBackDraw();
+    private final CharController player = new Main().getPlayer();
 
     public GamePanel() {
         Timer timer = new Timer(1000 / 60, e -> updateGame());
