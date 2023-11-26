@@ -2,7 +2,7 @@ package tiostitch.geometry.cube.controllers;
 
 public class CharController {
 
-    int x, y, width, height;
+    private int x, y, width, height;
 
     public CharController(int x, int y, int width, int heigth) {
         this.x = x;
