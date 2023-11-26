@@ -7,12 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
-    private ImageIcon background = new Main().getBackdraw();
+    private ImageIcon background = new Main().getBackDraw();
     private CharController player = new Main().getPlayer();
-    private Timer timer;
 
     public GamePanel() {
-        timer = new Timer(1000 / 60, new ActionListener() {
+        Timer timer = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateGame();
@@ -35,7 +34,7 @@ public class GamePanel extends JPanel {
             g2.setColor(Color.RED);
             g2.drawString("VOCÊ GANHOU!", 20, 160);
 
-            removeKeyListener(new Main().getKeyCrtller());
+            removeKeyListener(new Main().getKeyController());
             return;
         }
 
