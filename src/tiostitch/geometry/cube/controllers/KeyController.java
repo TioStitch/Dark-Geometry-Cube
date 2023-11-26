@@ -1,6 +1,5 @@
 package tiostitch.geometry.cube.controllers;
 
-import tiostitch.geometry.cube.GamePanel;
 import tiostitch.geometry.cube.Main;
 
 import java.awt.event.KeyEvent;
@@ -20,7 +19,7 @@ public class KeyController implements KeyListener {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
                 if (player.getY() <= 70)
-                    if (checkArround(player))
+                    if (checkAround(player))
                         return;
 
                 player.setY(player.getY() - 10);
@@ -57,7 +56,7 @@ public class KeyController implements KeyListener {
 
     }
 
-    private boolean checkArround(CharController player) {
+    private boolean checkAround(CharController player) {
         return player.getX() < 200 || player.getX() > 270;
     }
 
