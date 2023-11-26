@@ -8,32 +8,33 @@ import javax.swing.*;
 
 public class Main extends JFrame {
 
-    private static JFrame frame = new JFrame();
-
     public static void main(String[] args) {
         start();
     }
 
-    private ImageIcon logodraw = new ImageIcon(Main.class.getResource("Backgrounds/Logodraw.png"));
-    private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(Main.class.getResource("Backgrounds/Backdraw.png")), 510, 408);
+    private ImageIcon logodraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
+    private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
     private static CharController player = new CharController(50, 50, 40, 40);
 
     private KeyController keyCrtller = new KeyController();
+    private JFrame frame = new JFrame();
 
     public static void start() {
-        frame.setTitle("GeometryCube - ALPHA-TEST v1.0");
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setSize(510, 408);
+        Main main = new Main();
+
+        main.frame.setTitle("GeometryCube - ALPHA-TEST v1.0");
+        main.frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        main.frame.setSize(510, 408);
 
         GamePanel gamePanel = new GamePanel(60);
-        frame.add(gamePanel);
+        main.frame.add(gamePanel);
 
-        frame.setIconImage(new Main().getLogodraw().getImage());
-        frame.addKeyListener(new Main().getKeyCrtller());
+        main.frame.setIconImage(new Main().getLogodraw().getImage());
+        main.frame.addKeyListener(new Main().getKeyCrtller());
 
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        main.frame.setResizable(false);
+        main.frame.setLocationRelativeTo(null);
+        main.frame.setVisible(true);
     }
 
     public ImageIcon getLogodraw() {
@@ -50,5 +51,9 @@ public class Main extends JFrame {
 
     public CharController getPlayer() {
         return player;
+    }
+
+    public JFrame getFrame() {
+        return frame;
     }
 }
