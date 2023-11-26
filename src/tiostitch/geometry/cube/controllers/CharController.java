@@ -4,11 +4,11 @@ public class CharController {
 
     private int x, y, width, height;
 
-    public CharController(int x, int y, int width, int heigth) {
+    public CharController(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.height = heigth;
+        this.height = height;
     }
 
     public void setX(int x) {
