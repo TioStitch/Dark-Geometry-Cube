@@ -7,14 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
-
     private ImageIcon background = new Main().getBackdraw();
     private CharController player = new Main().getPlayer();
     private Timer timer;
 
-    public GamePanel(int FRAME_RATE) {
-
-        timer = new Timer(1000 / FRAME_RATE, new ActionListener() {
+    public GamePanel() {
+        timer = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateGame();

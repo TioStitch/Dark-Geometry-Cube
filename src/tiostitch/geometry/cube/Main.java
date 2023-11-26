@@ -8,10 +8,6 @@ import javax.swing.*;
 
 public class Main extends JFrame {
 
-    public static void main(String[] args) {
-        start();
-    }
-
     private ImageIcon logodraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
     private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
     private static CharController player = new CharController(50, 50, 40, 40);
@@ -19,22 +15,25 @@ public class Main extends JFrame {
     private KeyController keyCrtller = new KeyController();
     private JFrame frame = new JFrame();
 
-    public static void start() {
+    public static void main(String[] args) {
         Main main = new Main();
+        main.start();
+    }
 
-        main.frame.setTitle("GeometryCube - ALPHA-TEST v1.0");
-        main.frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        main.frame.setSize(510, 408);
+    public void start() {
+        frame.setTitle("GeometryCube - ALPHA-TEST v1.0");
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setSize(510, 408);
 
-        GamePanel gamePanel = new GamePanel(60);
-        main.frame.add(gamePanel);
+        GamePanel gamePanel = new GamePanel();
+        frame.add(gamePanel);
 
-        main.frame.setIconImage(new Main().getLogodraw().getImage());
-        main.frame.addKeyListener(new Main().getKeyCrtller());
+        frame.setIconImage(new Main().getLogodraw().getImage());
+        frame.addKeyListener(new Main().getKeyCrtller());
 
-        main.frame.setResizable(false);
-        main.frame.setLocationRelativeTo(null);
-        main.frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 
     public ImageIcon getLogodraw() {
@@ -51,9 +50,5 @@ public class Main extends JFrame {
 
     public CharController getPlayer() {
         return player;
-    }
-
-    public JFrame getFrame() {
-        return frame;
     }
 }

@@ -58,19 +58,10 @@ public class KeyController implements KeyListener {
     }
 
     private boolean checkArround(CharController player) {
-        if (player.getX() < 200) {
-            return true;
-        }
-        if (player.getX() > 270) {
-            return true;
-        }
-        return false;
+        return player.getX() < 200 || player.getX() > 270;
     }
 
     private boolean isFinale(CharController player) {
-        if (player.getY() <= 30 && player.getX() >= 200 && player.getX() <= 270) {
-            return true;
-        }
-        return false;
+        return player.getY() <= 30 && player.getX() >= 200 && player.getX() <= 270;
     }
 }
