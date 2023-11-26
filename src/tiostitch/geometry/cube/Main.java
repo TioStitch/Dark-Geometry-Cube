@@ -8,12 +8,12 @@ import javax.swing.*;
 
 public class Main extends JFrame {
 
-    private ImageIcon logodraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
-    private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
-    private static CharController player = new CharController(50, 50, 40, 40);
+    private final ImageIcon logodraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
+    private final ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
+    private static final CharController player = new CharController(50, 50, 40, 40);
 
     private KeyController keyCrtller = new KeyController();
-    private JFrame frame = new JFrame();
+    private final JFrame frame = new JFrame();
 
     public static void main(String[] args) {
         Main main = new Main();
