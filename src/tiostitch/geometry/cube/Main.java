@@ -12,7 +12,7 @@ public class Main extends JFrame {
     private final ImageIcon backDraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
     private static final CharController player = new CharController(50, 50, 40, 40);
 
-    private KeyController keyCrtller = new KeyController();
+    private final KeyController keyController = new KeyController();
     private final JFrame frame = new JFrame();
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Main extends JFrame {
         frame.add(gamePanel);
 
         frame.setIconImage(new Main().getLogoDraw().getImage());
-        frame.addKeyListener(new Main().getKeyCrtller());
+        frame.addKeyListener(new Main().getKeyController());
 
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -44,8 +44,8 @@ public class Main extends JFrame {
         return backDraw;
     }
 
-    public KeyController getKeyCrtller() {
-        return keyCrtller;
+    public KeyController getKeyController() {
+        return keyController;
     }
 
     public CharController getPlayer() {
