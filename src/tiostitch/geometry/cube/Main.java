@@ -8,12 +8,12 @@ import javax.swing.*;
 
 public class Main extends JFrame {
 
-    private ImageIcon logodraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
-    private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
-    private static CharController player = new CharController(50, 50, 40, 40);
+    private final ImageIcon logoDraw = new ImageIcon(getClass().getResource("Backgrounds/Logodraw.png"));
+    private final ImageIcon backDraw = ImgController.resizeImageGif(new ImageIcon(getClass().getResource("Backgrounds/Backdraw.png")), 510, 408);
+    private static final CharController player = new CharController(50, 50, 40, 40);
 
-    private KeyController keyCrtller = new KeyController();
-    private JFrame frame = new JFrame();
+    private final KeyController keyController = new KeyController();
+    private final JFrame frame = new JFrame();
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -28,24 +28,24 @@ public class Main extends JFrame {
         GamePanel gamePanel = new GamePanel();
         frame.add(gamePanel);
 
-        frame.setIconImage(new Main().getLogodraw().getImage());
-        frame.addKeyListener(new Main().getKeyCrtller());
+        frame.setIconImage(new Main().getLogoDraw().getImage());
+        frame.addKeyListener(new Main().getKeyController());
 
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    public ImageIcon getLogodraw() {
-        return logodraw;
+    public ImageIcon getLogoDraw() {
+        return logoDraw;
     }
 
-    public ImageIcon getBackdraw() {
-        return backdraw;
+    public ImageIcon getBackDraw() {
+        return backDraw;
     }
 
-    public KeyController getKeyCrtller() {
-        return keyCrtller;
+    public KeyController getKeyController() {
+        return keyController;
     }
 
     public CharController getPlayer() {

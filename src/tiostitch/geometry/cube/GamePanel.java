@@ -7,17 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
-    private ImageIcon background = new Main().getBackdraw();
-    private CharController player = new Main().getPlayer();
-    private Timer timer;
+    private final ImageIcon background = new Main().getBackDraw();
+    private final CharController player = new Main().getPlayer();
 
     public GamePanel() {
-        timer = new Timer(1000 / 60, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateGame();
-            }
-        });
+        final Timer timer = new Timer(1000 / 60, e -> updateGame());
         timer.start();
     }
 
@@ -30,12 +24,13 @@ public class GamePanel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
 
         if (player.getY() <= -40) {
-            Font font = new Font("BOLD", Font.BOLD, 60);
+            final Font font = new Font("BOLD", Font.BOLD, 60);
+
             g2.setFont(font);
             g2.setColor(Color.RED);
             g2.drawString("VOCÊ GANHOU!", 20, 160);
 
-            removeKeyListener(new Main().getKeyCrtller());
+            removeKeyListener(new Main().getKeyController());
             return;
         }
 
