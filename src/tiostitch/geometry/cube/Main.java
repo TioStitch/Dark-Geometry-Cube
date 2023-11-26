@@ -18,7 +18,7 @@ public class Main extends JFrame {
     private ImageIcon backdraw = ImgController.resizeImageGif(new ImageIcon(Main.class.getResource("Backgrounds/Backdraw.png")), 510, 408);
     private static CharController player = new CharController(50, 50, 40, 40);
 
-    private static KeyController keyCrtller = new KeyController();
+    private KeyController keyCrtller = new KeyController();
 
     public static void start() {
         frame.setTitle("GeometryCube - ALPHA-TEST v1.0");
@@ -29,7 +29,7 @@ public class Main extends JFrame {
         frame.add(gamePanel);
 
         frame.setIconImage(new Main().getLogodraw().getImage());
-        frame.addKeyListener(keyCrtller);
+        frame.addKeyListener(new Main().getKeyCrtller());
 
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -42,6 +42,10 @@ public class Main extends JFrame {
 
     public ImageIcon getBackdraw() {
         return backdraw;
+    }
+
+    public KeyController getKeyCrtller() {
+        return keyCrtller;
     }
 
     public CharController getPlayer() {

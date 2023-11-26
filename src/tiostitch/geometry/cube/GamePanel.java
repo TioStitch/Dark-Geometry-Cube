@@ -36,6 +36,8 @@ public class GamePanel extends JPanel {
             g2.setFont(font);
             g2.setColor(Color.RED);
             g2.drawString("VOCÊ GANHOU!", 20, 160);
+
+            removeKeyListener(new Main().getKeyCrtller());
             return;
         }
 
