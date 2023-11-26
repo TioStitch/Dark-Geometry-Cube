@@ -1,2 +1,2 @@
-# Dark-Geometry-Cube
-Um jogo minimalista aonde deve-se controlar um cubo e mover ele até a saída.
+- O jogo é simples e contém uma complexidade muito baixa, o único objetivo é encaixar o quadrado na saída,
+- não importa como, você apenas deve mover ele até ele alcançar o final, e o jogo terá sido ganho.
