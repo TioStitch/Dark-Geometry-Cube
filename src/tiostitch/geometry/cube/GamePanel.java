@@ -11,12 +11,7 @@ public class GamePanel extends JPanel {
     private CharController player = new Main().getPlayer();
 
     public GamePanel() {
-        Timer timer = new Timer(1000 / 60, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                updateGame();
-            }
-        });
+        Timer timer = new Timer(1000 / 60, e -> updateGame());
         timer.start();
     }
 
